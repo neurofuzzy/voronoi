@@ -151,10 +151,13 @@ class Shape{
         template.insertAdjacentHTML("beforeend",svg_file);
         let elements = template.getElementsByTagName("svg");
         let res_svg =  elements[elements.length-1];
+        if (!res_svg) {
+            return;
+        }
         template.removeChild(res_svg);
         let children = [...res_svg.childNodes];
-        let nb_paths = 0
-        let path = null
+        let nb_paths = 0;
+        let path = null;
         children.forEach((c)=>{
             if(c.nodeType != Node.TEXT_NODE){
                 if(c.tagName == "path"){

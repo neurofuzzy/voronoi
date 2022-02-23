@@ -2,11 +2,11 @@ import {defined,html,rand_col, send} from "./web-js-utils.js"
 import {Vector} from "../libs/Vector.js"
 import {Geometry} from "./geometry.js"
 import {Svg} from "./svg_utils.js"
-import * as vor_core from "../libs/rhill-voronoi-core.js"
+import {Voronoi} from "../libs/rhill-voronoi-core.js"
 
 let geom = new Geometry()
 let svg = new Svg()
-let vor_rhill = new vor_core.Voronoi()
+let vor_rhill = new Voronoi()
 
 function he_length(he){
     const dx = he.edge.va.x-he.edge.vb.x

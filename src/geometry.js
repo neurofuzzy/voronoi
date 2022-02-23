@@ -35,8 +35,8 @@ class Geometry{
         const denominator = ((x1-x2)*(y3-y4) - (y1-y2)*(x3-x4))
         return {x:(x1_y2_m_y1_x2*(x3-x4) - (x1-x2)*x3_y4_m_y3_x4) / denominator,
                 y:(x1_y2_m_y1_x2*(y3-y4) - (y1-y2)*x3_y4_m_y3_x4) / denominator}
-    }
-    compute_path_points(path,step_size){
+    } 
+    compute_path_points(path,step_size){ 
         let res = []
         const path_lenght = path.getTotalLength()
         const nb_steps = Math.round(path_lenght / step_size)
@@ -48,6 +48,9 @@ class Geometry{
         return res
     }
     inside_id(x,y,id){
+        const svg_elem = document.getElementById("main_svg");
+        x += svg_elem.getBoundingClientRect().left;
+        y += svg_elem.getBoundingClientRect().top;
         let res = document.elementFromPoint(x,y)
         if(res == null){
             return false

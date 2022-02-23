@@ -114,9 +114,13 @@ class Seeds{
         let x,y
         let max_iter = 100
         let inside = false
+        const svg_elem = document.getElementById("main_svg");
+        const offsetX = svg_elem.getBoundingClientRect().left;
+        const offsetY = svg_elem.getBoundingClientRect().top;
         while((!inside)&&(max_iter>0)){
-            x = box.x + Math.random()*box.width
-            y = box.y + Math.random()*box.height
+
+            x = box.x + Math.random()*box.width - offsetX;
+            y = box.y + Math.random()*box.height - offsetY;
             if(geom.inside_id(x, y, this.shape.svg_path.id)){
                 inside = true
             }

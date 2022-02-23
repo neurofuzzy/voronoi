@@ -1721,7 +1721,7 @@ Voronoi.prototype.compute = function(sites, bbox) {
 /******************************************************************************/
 
 if ( typeof module !== 'undefined' ) {
-    module.exports = Voronoi;
+    module.exports = {Voronoi};
 }
 //ES2015 export
 export {
